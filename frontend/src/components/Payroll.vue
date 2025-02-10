@@ -110,18 +110,16 @@ mounted(){
   },
   methods: {
     // add payroll in methods
-    async addPayroll(){
-      if(this.isEditing){
-        await this.$store.dispatch("updatePayroll", {
-          index: this.editIndex,
-          payroll: this.newPayroll
-        })
-      } else{
-        await this.$store.dispatch("insertPayroll", this.newPayroll)
-      }
-      this.closeModal()
-      
-    },
+    async addPayroll() {
+  if (this.isEditing) {
+    // Call Vuex update action, passing only modified payroll
+    await this.$store.dispatch("updatePayroll", this.newPayroll);
+  } else {
+    await this.$store.dispatch("insertPayroll", this.newPayroll);
+  }
+  this.closeModal();
+}
+,
 
     // update payroll in methods
     async updatePayroll() {
@@ -190,13 +188,24 @@ mounted(){
   
   this.closeModal(); // Close the modal after saving
 },
-    editPayroll(index) {
-      this.isEditing = true;
-      this.editIndex = index; // Store index of the payroll being edited
-      // Copy the selected payroll's data to the form
-      this.newPayroll = { ...this.$store.state.payroll[index] };
-      this.isModalVisible = true; // Open the modal
-    },
+editPayroll(index) {
+  this.isEditing = true;
+  this.editIndex = index; // Store index of the payroll being edited
+  const selectedPayroll = this.$store.state.payroll[index]; // Get the payroll object
+
+  // Ensure data is copied correctly
+  this.newPayroll = {
+    payroll_id: selectedPayroll.payroll_id,
+    employee_id: selectedPayroll.employee_id,
+    hours_worked: selectedPayroll.hours_worked,
+    leave_deductions: selectedPayroll.leave_deductions,
+    salary_paid: selectedPayroll.salary_paid,
+    payroll_date: selectedPayroll.payroll_date,
+  };
+
+  this.isModalVisible = true; // Open modal for editing
+}
+,
     calculatePayroll() {
       // Compute payroll amount based on hours or salary
       if (this.newPayroll.isSalary) {

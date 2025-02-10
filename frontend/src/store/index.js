@@ -226,6 +226,7 @@ export default createStore({
         } else {
           console.error('Failed to update payroll');
         }
+        location.reload()
       } catch (error) {
         console.error("Error updating payroll:", error);
       }
