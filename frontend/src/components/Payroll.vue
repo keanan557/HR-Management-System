@@ -70,7 +70,7 @@
           <td>{{ payroll.payroll_date}}</td>
           <td class="action-buttons">
             <button @click="editPayroll(index)" class="editbutton">Edit</button>
-            <button @click="deletePayroll(index)" class="deletebutton">Delete</button>
+            <button @click="deletePayroll(payroll.payroll_id)" class="deletebutton">Delete</button>
           </td>
         
           <td>
@@ -124,9 +124,24 @@ mounted(){
     },
 
     // update payroll in methods
+    async updatePayroll() {
+  if (this.isEditing) {
+    await this.$store.dispatch("updatePayroll", {
+      index: this.editIndex,
+      payroll: this.newPayroll,
+    });
+    this.closeModal();
+  }
+},
 
 
     // delete payroll in methods
+    async deletePayroll(payroll_id) {
+  const confirmDelete = confirm("Are you sure you want to delete this payroll?");
+  if (confirmDelete) {
+    await this.$store.dispatch("deletePayroll", payroll_id);
+  }
+},
 
 
     openModal() {
@@ -190,10 +205,10 @@ mounted(){
         this.newPayroll.payrollAmount = this.newPayroll.salary - this.newPayroll.leaveDeductions;
       }
     },
-    deletePayroll(index) {
-      // Remove the selected payroll
-      this.payrolls.splice(index, 1);
-    },
+    // deletePayroll(index) {
+    //   // Remove the selected payroll
+    //   this.payrolls.splice(index, 1);
+    // },
 
     generatePayslip(payroll) {
   const doc = new jsPDF();

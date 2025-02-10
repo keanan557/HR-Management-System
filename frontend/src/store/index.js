@@ -56,9 +56,19 @@ export default createStore({
     },
 
     // delete payroll mutations
-    deletePayrollToState(state, payroll_id){
-      state.payroll = state.payroll.filter(payroll => payroll.payroll_id !== payroll_id)
+    deletePayrollToState(state, payroll_id) {
+      if (!state.payroll) {
+        console.error("state.payroll is undefined!");
+        return;
+      }
+    
+      console.log("Before Deletion:", state.payroll);
+    
+      state.payroll = state.payroll.filter(payroll => payroll.payroll_id !== payroll_id);
+    
+      console.log("After Deletion:", state.payroll);
     },
+    
 
     // view attendanceandleave mutations
     viewAttendanceAndLeave(state,payload){
@@ -230,13 +240,19 @@ export default createStore({
           method: 'DELETE',
         });
     
+        const data = await response.json();
+        console.log("Delete Response:", data);
+    
         if (response.ok) {
           commit("deletePayrollToState", payroll_id);
+        } else {
+          console.error("Failed to delete payroll");
         }
       } catch (error) {
         console.error("Error deleting payroll:", error);
       }
     },
+    
     
     // attendanceandleave actions
     // fetch attendanceandleave
