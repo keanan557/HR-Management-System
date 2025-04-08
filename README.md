@@ -2,7 +2,7 @@ ModernTech Solutions hr-management system
 
 [![Screenshot of Homepage](https://github.com/keanan557/images/blob/b1abeb2ea05f276082342636c216bc485895d5b1/Screenshot%202025-04-08%20142709.png)]()
 
-A fully functional e-commerce website built by Keanan,Raeesa and Siya for the Module 3 assignment. ModernTech offers a solution to hr managers making it easier manage their employees.
+A fully functional hr-management web application built by Keanan,Raeesa and Siya for the Module 3 assignment. ModernTech offers a solution to hr managers making it easier manage their employees.
 
 ## Table of Contents
 - [Live Demo](#live-demo)
