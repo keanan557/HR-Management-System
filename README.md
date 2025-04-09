@@ -13,7 +13,7 @@ A fully functional hr-management web application built by Keanan,Raeesa and Siya
 - [Author](#author)
 
 ## Live Demo
-[Link to the live deployed website](pulsefit-live.vercel.app/)
+[Link to the live deployed website]()
 
 ## Technologies Used
 - **Front-end:** Vue
@@ -42,10 +42,10 @@ Follow these steps to run the ReflectaHome website on your local development env
     ```
 
 4.  **Database Setup:**
-    * Create a new database named `reflectahome` in your MySQL server.
-    * Import the database schema from the provided SQL file (`database/reflectahome.sql` - if applicable). You can do this using a MySQL client (like phpMyAdmin or MySQL Workbench) or the command line:
+    * Create a new database named `moderntech` in your MySQL server.
+    * Import the database schema from the provided SQL file (`database/moderntech.sql` - if applicable). You can do this using a MySQL client (like phpMyAdmin or MySQL Workbench) or the command line:
         ```bash
-        mysql -u [your_mysql_username] -p reflectahome < database/reflectahome.sql
+        mysql -u [your_mysql_username] -p moderntech < database/moderntech.sql
         ```
     * Configure the database connection details in your PHP configuration file (e.g., `config.php`, `.env`):
         ```php
@@ -54,7 +54,7 @@ Follow these steps to run the ReflectaHome website on your local development env
         define('DB_HOST', 'localhost');
         define('DB_USER', 'your_db_user');
         define('DB_PASS', 'your_db_password');
-        define('DB_NAME', 'reflectahome');
+        define('DB_NAME', 'moderntech');
         ?>
         ```
 
@@ -77,7 +77,7 @@ This e-commerce website implements the following key features:
 * **Product/Service Display and Catalog Implementation:** Clear and organized display of mirror products with detailed information and browsing capabilities.
 * **Shopping Cart and Order Process:** A functional shopping cart allowing users to add, modify, and checkout with their selected items.
 * **Responsive Design Implementation:** The website adapts seamlessly to various screen sizes (desktop, tablet, mobile).
-* **Database Design and Implementation:** A well-structured database (`reflectahome`) to store user, product, and order data.
+* **Database Design and Implementation:** A well-structured database (`moderntech`) to store user, product, and order data.
 * **Authentication and User Management:** Secure authentication for users and potentially an administrative interface for managing the website.
 * **Product/Service Data Management:** [If implemented] An administrative interface for adding, editing, and deleting products.
 * **Order Processing and Management:** [If implemented] An administrative interface for viewing and managing customer orders.
