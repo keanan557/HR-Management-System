@@ -30,7 +30,7 @@ Follow these steps to run the ReflectaHome website on your local development env
 
 2.  **Clone the Repository:**
     ```bash
-    git clone https://github.com/keanan557/PulseFit.git
+    git clone https://github.com/keanan557/HR-Management-System.git
     cd frontend and 
     cd api
     ```
