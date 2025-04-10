@@ -66,10 +66,11 @@ Follow these steps to run the hr-management system on your local development env
          USER = root
          PASSWORD = your password
          DATABASE = moderntech
+         JWT_SECRET = your_jwt_secret
       
         ```
 
-5.  **Run the Development Server (Example using PHP's built-in server):**
+6.  **Run the Development Server (Example using PHP's built-in server):**
     ```bash
     npm run serve for frontend
     node --watch index.js for api 
