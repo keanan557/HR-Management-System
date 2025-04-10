@@ -47,7 +47,7 @@ Follow these steps to run the hr-management system on your local development env
         ```bash
         mysql -u [your_mysql_username] -p moderntech < database/moderntech.sql
         ```
-    * Configure the database connection details in your PHP configuration file (e.g., `config.php`, `.env`):
+    * Configure the database connection details in your PHP configuration file (e.g., `config.js`, `.env`):
         ```php
         <?php
         // Example configuration
@@ -90,8 +90,11 @@ This e-commerce website implements the following key features:
 * Node : [https://nodejs.org/en]
 
 ## Author
-Keanan 
-Raeesa
-Siya
+* Keanan 
+* Raeesa
+* Siyavuya
 
-github.com/keanan557
+##Githubs
+* github.com/keanan557
+* github.com/raebehardien1
+* github.com/Siyavuyakholani
