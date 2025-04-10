@@ -47,22 +47,29 @@ Follow these steps to run the hr-management system on your local development env
         ```bash
         mysql -u [your_mysql_username] -p moderntech < database/moderntech.sql
         ```
-    * Configure the database connection details in your PHP configuration file (e.g., `config.js`, `.env`):
-        ```php
-        <?php
-        // Example configuration
-        define('DB_HOST', 'localhost');
-        define('DB_USER', 'your_db_user');
-        define('DB_PASS', 'your_db_password');
-        define('DB_NAME', 'moderntech');
-        ?>
+     * Configure the database connection details in your mysql configuration file (e.g., `config.js`, `.env`):
+      ## config.js
+       ```
+       const pool = mysql.createPool({
+       host: process.env.host,
+       user: process.env.user,
+       password: process.env.password,
+       database: process.env.database
+      })
+
+      export{pool}
+
+       ```
+       ## .env
+        ```
+         HOST = localhost
+         USER = root
+         PASSWORD = your password
+         DATABASE = moderntech
+      
         ```
 
-5.  **Web Server Configuration:**
-    * Ensure your web server is configured to point to the project's `public` directory (or the main entry point of your application).
-    * If using Apache, you might need to enable `mod_rewrite` and configure a `.htaccess` file (if provided).
-
-6.  **Run the Development Server (Example using PHP's built-in server):**
+5.  **Run the Development Server (Example using PHP's built-in server):**
     ```bash
     npm run serve for frontend
     node --watch index.js for api 
