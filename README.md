@@ -75,7 +75,7 @@ Follow these steps to run the hr-management system on your local development env
     npm run serve for frontend
     node --watch index.js for api 
     ```
-    Then, open your web browser and navigate to `http://localhost:8000`.
+    Then, open your web browser and navigate to `example: http://localhost:8000`.
 
 ## Key Features
 This e-commerce website implements the following key features:
